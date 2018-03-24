@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <form action="#" method="post" class="needs-validation" novalidate>
+    <form action="{{ route('posts.store') }}" method="post" class="needs-validation" novalidate>
             {{ csrf_field() }}
             <legend>Create A New Post</legend>
 
