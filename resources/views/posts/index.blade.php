@@ -23,7 +23,11 @@
                 <a href="{{ route('posts.edit', $post->id) }}"><button type="button" class="btn btn-success">Edit</button></a>
             </td>
             <td>
-                <a href="{{ route('posts.destroy', $post->id) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                <form method="post" action="{{ route('posts.destroy',$post->id) }}">
+                    {{ csrf_field() }}
+                    <input name="_method" type="hidden" value="DELETE">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
             </td>
         </tr>    
       @endforeach
