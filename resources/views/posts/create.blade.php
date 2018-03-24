@@ -1,9 +1,5 @@
 @extends('app')
 
-@section('title')
-    Create A New Article
-@stop
-
 @section('content')
     <form action="{{ route('posts.store') }}" method="post" class="needs-validation" novalidate>
             {{ csrf_field() }}
